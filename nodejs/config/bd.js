@@ -1,0 +1,15 @@
+module.exports = function(app) {
+
+	var mongoose = require('mongoose');
+	mongoose.connect('mongodb://localhost/guerra');
+
+	var db = mongoose.connection;
+
+	db.on('error', console.error.bind(console, 'connection error:'));
+	db.once('open', function (callback) {
+		console.log("conexion con base de datos exitosa")
+	});
+
+	return mongoose;
+
+};

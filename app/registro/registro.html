@@ -1,0 +1,30 @@
+
+
+<div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 registro">
+<form name="formreg" ng-submit="sigin()" method="GET"  class="css-form">
+  <div class="form-group">
+    <label for="inputUsuario">Usuario</label>
+    <input type="text" ng-blur="validarNombre()" ng-change="fetchData()" ng-model="user.usuario"  name="inputUsuario"  class="form-control" id="inputUsuario" placeholder="Usuario" required>
+    <div class="error" ng-show="formreg.inputUsuario.$error.nombreExistente">El nombre de usuario {{usuarioBlur}} ya esta en uso </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword1">Password</label>
+    <input type="password" ng-model="user.password" class="form-control" id="inputPassword1" placeholder="Password" required equals="{{user.repit_password}}">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword1">repita la password</label>
+    <input type="password" ng-model="user.repit_password" name="namePassRepit" class="form-control" id="inputPassword1" placeholder="Password" required equals="{{user.password}}" >
+  </div>
+  <div class="error"  ng-hide="!formreg.namePassRepit.$error.equals || !user.password || !user.repit_password">Las contraseñas no coinciden</div>
+
+  <div ng-show="registrado" class="exito">
+      Usuario registrado con exito.
+  </div>
+  <div class="exito">
+    <a href="#/"><button type="button" class="btn btn-danger">Atras</button></a>
+    <button type="submit" class="btn btn-success">Registrarse</button>
+</div>
+ 
+</form>
+</div>
+	

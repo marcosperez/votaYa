@@ -1,0 +1,32 @@
+
+
+<div class="login col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 " ng-controller="View1Ctrl">
+<form ng-submit="login()" method="GET">
+  <div class="form-group">
+    <label for="inputUsuario">Usuario</label>
+    <input type="text" ng-model="user.usuario" class="form-control" id="inputUsuario" placeholder="Usuario" required>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword1">Password</label>
+    <input type="password" ng-model="user.password" class="form-control" id="inputPassword1" placeholder="Password" required>
+  </div>
+  <div class="derecha">	
+  		<a href="#/registro"><button type="button" class="btn btn-info">Registrarse</button></a>
+   		<button type="submit" class="btn btn-success">Ingresar</button>
+
+  </div>	
+</form>
+</div>
+	
+<style type="text/css">
+	.login{
+		 margin-top: 2em;
+    background-color:#acc7dc;
+    padding: 1em;
+	}
+
+	.derecha {
+		text-align: right;
+
+	}
+</style>

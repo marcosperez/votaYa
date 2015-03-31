@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div class="navigator container-fluid"> 
+    <ul class="nav navbar-nav">
+      <li role="presentation" ng-class="{active:isActive('/home')}"><a href="#/home">Home</a></li>
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" 
+        ng-class="{active:isActive('/encuestas/listado')||isActive('/encuestas/crear')}" 
+        data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+        Gestionar Encuestas <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li role="presentation" ng-class="{active:isActive('/encuestas/listado')}"><a href="#/encuestas/listado">Listado</a></li>
+        <li role="presentation" ng-class="{active:isActive('/encuestas/crear')}"><a href="#/encuestas/crear">Crear encuesta</a></li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <ul class="nav navbar-nav navbar-right">
+   <li class="cerrarSesion"><a  ng-click="logout()">Cerrar sesion</a></li>
+ </ul>
+</div>
+</nav>
+
+
+<script type="text/javascript">
+$('.dropdown-toggle').dropdown();/*
+$('.dropdown').hover(function(){ 
+  $('.dropdown-toggle', this).trigger('click'); 
+});*/
+</script>
